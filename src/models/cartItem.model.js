@@ -13,7 +13,7 @@ const cartItemSchema = new mongoose.Schema(
       required: true,
     },
     quantity: { type: Number, required: true, default: 1, min: 1 },
-    priceAtAdd: { type: Number, required: true }, // snapshot
+    priceAtAdd: { type: Number, required: true }, 
   },
   { timestamps: true }
 );

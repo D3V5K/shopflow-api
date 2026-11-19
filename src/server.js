@@ -2,6 +2,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = require("./app");
 const connectDB = require("./config/db");
+const models = require('./models');
+
 
 const requiredEnvVars = ["JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET", "MONGODB_URI"];
 const missing = requiredEnvVars.filter(v => !process.env[v]);
@@ -26,5 +28,6 @@ const startServer = async () => {
     process.exit(1);
   }
 };
+console.log('✅ Models loaded:', Object.keys(models));
 
 startServer();

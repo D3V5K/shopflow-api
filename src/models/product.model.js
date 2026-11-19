@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
-    slug: { type: String, required: true, unique: true, lowercase: true },
-    sku: { type: String, required: true, unique: true, uppercase: true },
+    slug: { type: String, required: true, lowercase: true },
+    sku: { type: String, required: true, uppercase: true },
 
     description: { type: String, default: null },
     shortDescription: { type: String, default: null },
