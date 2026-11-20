@@ -54,11 +54,6 @@ userSchema.index({ username: 1 }, { unique: true });
 userSchema.index({ isActive: 1, role: 1 });
 userSchema.index({ createdAt: -1 });
 
-// Soft delete filter
-userSchema.pre(/^find/, function (next) {
-  this.where({ deletedAt: null });
-  next();
-});
 
 
 module.exports = mongoose.model('User', userSchema);

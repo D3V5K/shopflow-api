@@ -10,7 +10,7 @@ const categorySchema = new mongoose.Schema(
     parentId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Category',
-      default: null, // null = root
+      default: null, 
     },
 
     isActive: { type: Boolean, default: true },
@@ -26,9 +26,9 @@ categorySchema.index({ parentId: 1 });
 categorySchema.index({ parentId: 1, name: 1 }, { unique: true });
 categorySchema.index({ isActive: 1, sortOrder: 1 });
 
-categorySchema.pre(/^find/, function (next) {
-  this.where({ deletedAt: null });
-  next();
-});
+// categorySchema.pre(/^find/, function (next) {
+//   this.where({ deletedAt: null });
+//   next();
+// });
 
 module.exports = mongoose.model('Category', categorySchema);
