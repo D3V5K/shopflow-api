@@ -14,10 +14,6 @@ class UserRepository {
         return await User.findOne({ username });
     }
 
-    async getUserById(userId) {
-        return await User.findById(userId);
-    }
-
     async findById(userId) {
         return await User.findById(userId);
     }
