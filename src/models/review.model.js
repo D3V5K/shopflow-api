@@ -37,9 +37,8 @@ reviewSchema.index({ productId: 1 });
 reviewSchema.index({ productId: 1, isApproved: 1, createdAt: -1 });
 reviewSchema.index({ rating: 1 });
 
-reviewSchema.pre(/^find/, function (next) {
+reviewSchema.pre(/^find/, function () {
   this.where({ deletedAt: null });
-  next();
 });
 
 module.exports = mongoose.model('Review', reviewSchema);
