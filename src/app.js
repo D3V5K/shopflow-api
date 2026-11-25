@@ -8,6 +8,7 @@ const orderRoutes = require('./routes/order.routes');
 const paymentRoutes = require('./routes/payment.routes');
 const reviewRoutes = require('./routes/review.routes');
 const couponRoutes = require('./routes/coupon.routes');
+const wishlistRoutes = require('./routes/wishlist.routes');
 const errorHandler = require('./middlewares/error.middleware');
 const app = express();
 
@@ -22,6 +23,7 @@ app.use('/api/v1/orders', orderRoutes);
 app.use('/api/v1/payments', paymentRoutes);
 app.use('/api/v1/reviews', reviewRoutes);
 app.use('/api/v1/coupons', couponRoutes);
+app.use('/api/v1/wishlist', wishlistRoutes);
 
 app.use(errorHandler);
 
